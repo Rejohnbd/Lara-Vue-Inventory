@@ -2018,8 +2018,15 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     login: function login() {
+      var _this = this;
+
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/api/auth/login', this.form).then(function (res) {
-        return User.responseAfterLogin(res);
+        // use for storage token
+        User.responseAfterLogin(res);
+
+        _this.$router.push({
+          name: 'home'
+        });
       })["catch"](function (err) {
         return console.log(err.response.data);
       });
