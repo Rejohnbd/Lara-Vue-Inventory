@@ -8,4 +8,9 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 - npm run dev
 - npm run watch
 - npm i vue-router@3.5.4
+- [JWT Official](https://jwt-auth.readthedocs.io/en/develop/)
+- composer require tymon/jwt-auth
+- php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
+- php artisan jwt:secret
+
 
