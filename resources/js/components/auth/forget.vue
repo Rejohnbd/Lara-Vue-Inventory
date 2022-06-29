@@ -7,36 +7,22 @@
                         <div class="col-lg-12">
                             <div class="login-form">
                                 <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">Register</h1>
+                                    <h1 class="h4 text-gray-900 mb-4">Forget Password</h1>
                                 </div>
-                                <form>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="exampleInputFirstName"
-                                            placeholder="Enter Your Full Name">
-                                    </div>
+                                <form class="user">
                                     <div class="form-group">
                                         <input type="email" class="form-control" id="exampleInputEmail"
                                             aria-describedby="emailHelp" placeholder="Enter Email Address">
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control" id="exampleInputPassword"
-                                            placeholder="Password">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" class="form-control" id="exampleInputPasswordRepeat"
-                                            placeholder="Confirm Password">
-                                    </div>
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-primary btn-block">Register</button>
+                                        <a href="index.html" class="btn btn-primary btn-block">Forget Password</a>
                                     </div>
                                 </form>
                                 <hr>
                                 <div class="text-center">
                                     <router-link class="font-weight-bold small" to="/">
-                                        Already have an account?
+                                        Back To Login!
                                     </router-link>
-                                </div>
-                                <div class="text-center">
                                 </div>
                             </div>
                         </div>
