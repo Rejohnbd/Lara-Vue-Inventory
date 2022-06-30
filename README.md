@@ -18,5 +18,8 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 - php artisan migrate
 - php artisan make:controller Api/EmployeeController -r
 - php artisan make:model Modes\Employee
+- composer require intervention/image
+- [image intervention] (https://image.intervention.io/)
+- php artisan vendor:publish --provider="Intervention\Image\ImageServiceProviderLaravelRecent"
 
 
