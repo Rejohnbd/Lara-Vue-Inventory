@@ -14,5 +14,9 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 - php artisan jwt:secret
 - npm install sweetalert2
 - npm install noty
+- php artisan make:migration create_employees_table --create=employees
+- php artisan migrate
+- php artisan make:controller Api/EmployeeController -r
+- php artisan make:model Modes\Employee
 
 

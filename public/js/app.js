@@ -2330,6 +2330,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   created: function created() {
@@ -2344,14 +2349,18 @@ __webpack_require__.r(__webpack_exports__);
       form: {
         name: null,
         email: null,
-        password: null,
-        password_confirmation: null
+        phone: null,
+        sallery: null,
+        address: null,
+        photo: null,
+        nid: null,
+        joining_date: null
       },
       errors: {}
     };
   },
   methods: {
-    signup: function signup() {
+    employeeInsert: function employeeInsert() {
       var _this = this;
 
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/api/auth/signup', this.form).then(function (res) {
@@ -46037,10 +46046,11 @@ var render = function () {
                   _c(
                     "form",
                     {
+                      attrs: { enctype: "multipart/form-data" },
                       on: {
                         submit: function ($event) {
                           $event.preventDefault()
-                          return _vm.signup.apply(null, arguments)
+                          return _vm.employeeInsert.apply(null, arguments)
                         },
                       },
                     },
@@ -46346,7 +46356,41 @@ var render = function () {
                         ]),
                       ]),
                       _vm._v(" "),
-                      _vm._m(1),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("div", { staticClass: "form-row" }, [
+                          _c("div", { staticClass: "col-md-6" }, [
+                            _c("input", {
+                              staticClass: "custom-file-input",
+                              attrs: { type: "file", id: "customFile" },
+                            }),
+                            _vm._v(" "),
+                            _vm.errors.photo
+                              ? _c("small", { staticClass: "text-danger" }, [
+                                  _vm._v(
+                                    "\n                                                    " +
+                                      _vm._s(_vm.errors.photo[0]) +
+                                      "\n                                                "
+                                  ),
+                                ])
+                              : _vm._e(),
+                            _vm._v(" "),
+                            _c(
+                              "label",
+                              {
+                                staticClass: "custom-file-label",
+                                attrs: { for: "customFile" },
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                                    Choose file\n                                                "
+                                ),
+                              ]
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _vm._m(1),
+                        ]),
+                      ]),
                       _vm._v(" "),
                       _vm._m(2),
                     ]
@@ -46375,32 +46419,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c("div", { staticClass: "form-row" }, [
-        _c("div", { staticClass: "col-md-6" }, [
-          _c("input", {
-            staticClass: "custom-file-input",
-            attrs: { type: "file", id: "customFile" },
-          }),
-          _vm._v(" "),
-          _c(
-            "label",
-            { staticClass: "custom-file-label", attrs: { for: "customFile" } },
-            [
-              _vm._v(
-                "Choose\n                                                    file"
-              ),
-            ]
-          ),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-6" }, [
-          _c("img", {
-            staticStyle: { height: "40px", width: "40px" },
-            attrs: { src: "form.photo" },
-          }),
-        ]),
-      ]),
+    return _c("div", { staticClass: "col-md-6" }, [
+      _c("img", {
+        staticStyle: { height: "40px", width: "40px" },
+        attrs: { src: "form.photo" },
+      }),
     ])
   },
   function () {
@@ -46411,7 +46434,11 @@ var staticRenderFns = [
       _c(
         "button",
         { staticClass: "btn btn-primary btn-block", attrs: { type: "submit" } },
-        [_vm._v("Add\n                                            Employee")]
+        [
+          _vm._v(
+            "\n                                            Add Employee\n                                        "
+          ),
+        ]
       ),
     ])
   },
@@ -63073,15 +63100,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!*****************************************************!*\
   !*** ./resources/js/components/employee/create.vue ***!
   \*****************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _create_vue_vue_type_template_id_31499982___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./create.vue?vue&type=template&id=31499982& */ "./resources/js/components/employee/create.vue?vue&type=template&id=31499982&");
 /* harmony import */ var _create_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./create.vue?vue&type=script&lang=js& */ "./resources/js/components/employee/create.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _create_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _create_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -63111,7 +63137,7 @@ component.options.__file = "resources/js/components/employee/create.vue"
 /*!******************************************************************************!*\
   !*** ./resources/js/components/employee/create.vue?vue&type=script&lang=js& ***!
   \******************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

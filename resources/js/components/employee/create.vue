@@ -13,7 +13,7 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Add Employee</h1>
                                     </div>
-                                    <form @submit.prevent="signup">
+                                    <form @submit.prevent="employeeInsert" enctype="multipart/form-data">
                                         <div class="form-group">
                                             <div class="form-row">
                                                 <div class="col-md-6">
@@ -90,8 +90,12 @@
                                             <div class="form-row">
                                                 <div class="col-md-6">
                                                     <input type="file" class="custom-file-input" id="customFile">
-                                                    <label class="custom-file-label" for="customFile">Choose
-                                                        file</label>
+                                                    <small class="text-danger" v-if="errors.photo">
+                                                        {{ errors.photo[0] }}
+                                                    </small>
+                                                    <label class="custom-file-label" for="customFile">
+                                                        Choose file
+                                                    </label>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <img src="form.photo" style="height: 40px; width: 40px" />
@@ -100,8 +104,9 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <button type="submit" class="btn btn-primary btn-block">Add
-                                                Employee</button>
+                                            <button type="submit" class="btn btn-primary btn-block">
+                                                Add Employee
+                                            </button>
                                         </div>
                                     </form>
                                 </div>
@@ -128,14 +133,18 @@ export default {
             form: {
                 name: null,
                 email: null,
-                password: null,
-                password_confirmation: null
+                phone: null,
+                sallery: null,
+                address: null,
+                photo: null,
+                nid: null,
+                joining_date: null
             },
             errors: {}
         };
     },
     methods: {
-        signup() {
+        employeeInsert() {
             axios.post('/api/auth/signup', this.form)
                 .then(res => {
                     // use for storage token
