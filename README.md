@@ -13,5 +13,6 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 - php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
 - php artisan jwt:secret
 - npm install sweetalert2
+- npm install noty
 
 
