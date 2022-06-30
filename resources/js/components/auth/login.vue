@@ -72,9 +72,19 @@ export default {
                 .then(res => {
                     // use for storage token
                     User.responseAfterLogin(res);
+                    Toast.fire({
+                        icon: 'success',
+                        title: 'Signed in successfully'
+                    })
                     this.$router.push({ name: 'home' });
                 })
-                .catch(err => console.log(err.response.data));
+                .catch(err => this.err = err.response.data.errors)
+                .catch(
+                    Toast.fire({
+                        icon: 'warning',
+                        title: 'Invalid Email or Password'
+                    })
+                )
         }
     }
 }
